@@ -10,8 +10,10 @@ const PORT = process.env.PORT;
 
 const compiler = webpack(config);
 compiler.hooks.done.tap('ProgressPlugin', (ctx, entry) => {
-  console.clear();
-  console.log(`\nServer running at: http://localhost:${PORT}\n`);
+  setTimeout(() => {
+    console.clear();
+    console.log(`\nServer running at: http://localhost:${PORT}\n`);
+  });
 });
 
 const app = express();
