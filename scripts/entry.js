@@ -9,6 +9,7 @@ if(module.hot) {
   });
   module.hot.dispose(data => {
     console.log(module.hot.status());
+    document.body.innerHTML = '';
     const tIdx = setTimeout(() => {});
     for (let i = prevTimeoutIndex; i < tIdx; i++) clearTimeout(i);
     prevTimeoutIndex = tIdx;
